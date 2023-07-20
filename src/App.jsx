@@ -14,6 +14,7 @@ import NewUser from "./pages/NewUser";
 import Products from "./pages/Products";
 import Product from "./pages/Product";
 import NewProduct from "./pages/NewProduct";
+import Login, {loader as loginLoader, action as loginAction} from "./pages/Login";
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -53,7 +54,12 @@ const router = createBrowserRouter(
 					element={<NewProduct />}
 				/>
 			</Route>
-            {/* <Route path="*" element={<h1>Route does not exist</h1>} /> */}
+			<Route
+				path="login"
+				element={<Login />}
+                loader={loginLoader}
+                action={loginAction}
+			/>
 		</Route>,
 	),
 );
