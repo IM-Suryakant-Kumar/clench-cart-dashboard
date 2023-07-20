@@ -4,24 +4,26 @@ import { Container, HomeWidget } from "../styles/home.css"
 import userData from "../dummyData";
 import WidgetSm from "../components/WidgetSm";
 import WidgetLg from "../components/WidgetLg";
-import { defer } from "react-router-dom";
-import { getUsers } from "../utils/dispatches";
+import { defer, useLoaderData } from "react-router-dom";
+import { getAllUsers } from "../utils/dispatches";
 
 export const loader = ({request}) => {
-    return defer({ users: getUsers() })
+    return defer({ users: getAllUsers() })
 }
 
 const Home = () => {
-  return (
-    <Container component="section">
-        <FeaturedInfo />
-        <Chart data={userData} title="User Analytics" dataKey="Active User" />
-        <HomeWidget>
-            <WidgetSm />
-            <WidgetLg />
-        </HomeWidget>
-    </Container>
-  )
+    const loaderData = useLoaderData()
+
+    return (
+        <Container component="section">
+            <FeaturedInfo />
+            <Chart data={userData} title="User Analytics" dataKey="Active User" />
+            <HomeWidget>
+                <WidgetSm loaderData={loaderData} />
+                <WidgetLg />
+            </HomeWidget>
+        </Container>
+    )
 }
 
 export default Home

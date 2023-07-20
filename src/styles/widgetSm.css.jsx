@@ -23,13 +23,6 @@ export const SListItem = styled(ListItem)`
     margin: 1.25em 0;
 `;
 
-export const Image = styled.img`
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-`;
-
 export const UserInfoConatiner = styled(Stack)``;
 
 export const Name = styled(Box)`

@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
+import React from "react";
 import {
 	Container,
-	Image,
 	SList,
 	SListItem,
 	Name,
@@ -10,9 +11,29 @@ import {
 	UserTitle,
 	VisibilityIcon,
 } from "../styles/widgetSm.css";
-import UserImage from "../data/avatar2.jpg";
+import { Await } from "react-router-dom";
+import Avatar from "./Avatar";
 
-const WidgetSm = () => {
+const WidgetSm = ({loaderData}) => {
+
+    const renderUsers = (users) => users.map(user => (
+        <SListItem key={user._id}>
+                <Avatar avatar={user.avatar} username={user.username} />
+                <UserInfoConatiner>
+                    <Name component="span">{user.username}</Name>
+                    <UserTitle component="span">
+                        Software Engineer
+                    </UserTitle>
+                </UserInfoConatiner>
+                <SButton
+                    variant="text"
+                    startIcon={<VisibilityIcon />}
+                >
+                    Dispaly
+                </SButton>
+            </SListItem>
+    ))
+
 	return (
 		<Container elevation={2}>
 			<Title
@@ -22,114 +43,9 @@ const WidgetSm = () => {
 				New Join Members
 			</Title>
 			<SList>
-				<SListItem>
-					<Image
-						src={UserImage}
-						alt="S"
-					/>
-					<UserInfoConatiner>
-						<Name component="span">Anna Keller</Name>
-						<UserTitle component="span">
-							Software Engineer
-						</UserTitle>
-					</UserInfoConatiner>
-					<SButton
-						variant="text"
-						startIcon={<VisibilityIcon />}
-					>
-						Dispaly
-					</SButton>
-				</SListItem>
-				<SListItem>
-					<Image
-						src={UserImage}
-						alt="S"
-					/>
-					<UserInfoConatiner>
-						<Name component="span">Anna Keller</Name>
-						<UserTitle component="span">
-							Software Engineer
-						</UserTitle>
-					</UserInfoConatiner>
-					<SButton
-						variant="text"
-						startIcon={<VisibilityIcon />}
-					>
-						Dispaly
-					</SButton>
-				</SListItem>
-				<SListItem>
-					<Image
-						src={UserImage}
-						alt="S"
-					/>
-					<UserInfoConatiner>
-						<Name component="span">Anna Keller</Name>
-						<UserTitle component="span">
-							Software Engineer
-						</UserTitle>
-					</UserInfoConatiner>
-					<SButton
-						variant="text"
-						startIcon={<VisibilityIcon />}
-					>
-						Dispaly
-					</SButton>
-				</SListItem>
-				<SListItem>
-					<Image
-						src={UserImage}
-						alt="S"
-					/>
-					<UserInfoConatiner>
-						<Name component="span">Anna Keller</Name>
-						<UserTitle component="span">
-							Software Engineer
-						</UserTitle>
-					</UserInfoConatiner>
-					<SButton
-						variant="text"
-						startIcon={<VisibilityIcon />}
-					>
-						Dispaly
-					</SButton>
-				</SListItem>
-				<SListItem>
-					<Image
-						src={UserImage}
-						alt="S"
-					/>
-					<UserInfoConatiner>
-						<Name component="span">Anna Keller</Name>
-						<UserTitle component="span">
-							Software Engineer
-						</UserTitle>
-					</UserInfoConatiner>
-					<SButton
-						variant="text"
-						startIcon={<VisibilityIcon />}
-					>
-						Dispaly
-					</SButton>
-				</SListItem>
-				<SListItem>
-					<Image
-						src={UserImage}
-						alt="S"
-					/>
-					<UserInfoConatiner>
-						<Name component="span">Anna Keller</Name>
-						<UserTitle component="span">
-							Software Engineer
-						</UserTitle>
-					</UserInfoConatiner>
-					<SButton
-						variant="text"
-						startIcon={<VisibilityIcon />}
-					>
-						Dispaly
-					</SButton>
-				</SListItem>
+                <React.Suspense fallback={<h3>Loding...</h3>}>
+                    <Await resolve={loaderData.users}>{renderUsers}</Await>
+                </React.Suspense>
 			</SList>
 		</Container>
 	);
