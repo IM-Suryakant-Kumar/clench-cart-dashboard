@@ -5,7 +5,7 @@ import {
 	EditButton,
 	Image,
 	ProductInfoContainer,
-} from "../styles/products.sc";
+} from "../styles/products.css";
 import { DataGrid } from "@mui/x-data-grid";
 import { productRows } from "../dummyData";
 import { Link } from "react-router-dom";

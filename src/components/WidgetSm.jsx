@@ -9,7 +9,7 @@ import {
 	UserInfoConatiner,
 	UserTitle,
 	VisibilityIcon,
-} from "../styles/widgetSm.sc";
+} from "../styles/widgetSm.css";
 import UserImage from "../data/avatar2.jpg";
 
 const WidgetSm = () => {

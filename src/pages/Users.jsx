@@ -5,7 +5,7 @@ import {
 	EditButton,
 	Image,
 	UserInfoContainer,
-} from "../styles/users.sc";
+} from "../styles/users.css";
 import { DataGrid } from "@mui/x-data-grid";
 import { userRows } from "../dummyData";
 import { Link } from "react-router-dom";

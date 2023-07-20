@@ -18,7 +18,7 @@ import {
 	TrendingUpIcon,
 	WorkIcon,
 	Wrapper,
-} from "../styles/sidebar.sc";
+} from "../styles/sidebar.css";
 
 const Sidebar = () => {
 	return (

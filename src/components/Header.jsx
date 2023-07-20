@@ -11,7 +11,7 @@ import {
 	Right,
 	SettingsIcon,
 	Wrapper,
-} from "../styles/header.sc";
+} from "../styles/header.css";
 
 const Header = () => {
 	return (

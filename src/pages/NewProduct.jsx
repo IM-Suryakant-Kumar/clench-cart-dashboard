@@ -8,7 +8,7 @@ import {
 	Options,
 	Title,
 	SButton as Button,
-} from "../styles/newProduct.sc";
+} from "../styles/newProduct.css";
 
 const NewProduct = () => {
 	return (

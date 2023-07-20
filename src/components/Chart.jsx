@@ -7,7 +7,7 @@ import {
 	Tooltip,
 	XAxis,
 } from "recharts";
-import { Container, Title } from "../styles/chart.sc";
+import { Container, Title } from "../styles/chart.css";
 
 const Chart = ({ title, data, dataKey, grid }) => {
 	return (

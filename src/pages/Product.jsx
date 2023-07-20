@@ -21,7 +21,7 @@ import {
     Options,
     Option,
     UploadCont,
-} from "../styles/product.sc";
+} from "../styles/product.css";
 import Chart from "../components/Chart";
 import { productData } from "../dummyData"
 import Prod from "../data/product4.jpg"

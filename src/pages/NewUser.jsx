@@ -9,7 +9,7 @@ import {
 	Options,
 	Title,
 	SButton as Button,
-} from "../styles/newUser.sc.jsx";
+} from "../styles/newUser.css";
 
 const NewUser = () => {
 	return (

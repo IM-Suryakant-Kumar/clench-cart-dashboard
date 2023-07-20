@@ -1,6 +1,6 @@
 import Chart from "../components/Chart"
 import FeaturedInfo from "../components/FeaturedInfo"
-import { Container, HomeWidget } from "../styles/home.sc"
+import { Container, HomeWidget } from "../styles/home.css"
 import userData from "../dummyData";
 import WidgetSm from "../components/WidgetSm";
 import WidgetLg from "../components/WidgetLg";

@@ -8,7 +8,7 @@ import {
 	Th,
 	Title,
 	Tr,
-} from "../styles/widgetLg.sc";
+} from "../styles/widgetLg.css";
 import Avatar from "../data/avatar3.png";
 
 const WidgetLg = () => {

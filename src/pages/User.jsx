@@ -29,7 +29,7 @@ import {
 	Input,
 	PublishIcon,
 	FormRightItem,
-} from "../styles/user.sc";
+} from "../styles/user.css";
 import Avatar from "../data/avatar4.jpg";
 import { Link } from "react-router-dom";
 

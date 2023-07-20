@@ -8,7 +8,7 @@ import {
 	PriceRate,
 	Title,
 	Wrapper,
-} from "../styles/featuredInfo.sc";
+} from "../styles/featuredInfo.css";
 
 const theme = createTheme({
 	components: {
