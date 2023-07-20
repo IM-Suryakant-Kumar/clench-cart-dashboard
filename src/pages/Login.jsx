@@ -38,9 +38,9 @@ const Login = () => {
 
 	return (
 		<Container>
-            <Title variant="h6" component="h1">Sign in to your account</Title>
-			{message && <Title variant="subtitle2" component="h3">{message}</Title>}
-            {errorMessage && <Title variant="subtitle2" component="h3">{errorMessage}</Title>}
+            <Title variant="h6" component="h1" className="main-title">Sign in to your account</Title>
+			{message && <Title variant="subtitle1" component="h3" className="message">{message}</Title>}
+            {errorMessage && <Title variant="subtitle2" component="h3" className="message">{errorMessage}</Title>}
 
 			<Form
 				method="post"
@@ -51,7 +51,8 @@ const Login = () => {
 					name="username"
 					id="username"
 					type="text"
-					placeholder="Username ex - john23"
+					placeholder="Username"
+                    className="first-input"
 				/>
 				<Input
 					name="password"
@@ -59,7 +60,7 @@ const Login = () => {
 					type="password"
 					placeholder="Password"
 				/>
-				<Button type="submit" disabled={navigation.state === "submitting"}>
+				<Button variant="contained" type="submit" disabled={navigation.state === "submitting"}>
 					{navigation.state === "submitting"
 						? "Loging in..."
 						: "Log in"}

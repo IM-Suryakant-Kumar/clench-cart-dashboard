@@ -4,6 +4,12 @@ import { Container, HomeWidget } from "../styles/home.css"
 import userData from "../dummyData";
 import WidgetSm from "../components/WidgetSm";
 import WidgetLg from "../components/WidgetLg";
+import { defer } from "react-router-dom";
+import { getUsers } from "../utils/dispatches";
+
+export const loader = ({request}) => {
+    return defer({ users: getUsers() })
+}
 
 const Home = () => {
   return (

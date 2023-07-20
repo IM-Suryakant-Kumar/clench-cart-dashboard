@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 
-import { loginUserThunk } from "./userThunk"
+import { loginThunk } from "./authThunk"
 import { toast } from "react-toastify"
 
 const initialState = {
@@ -9,28 +9,28 @@ const initialState = {
     error: null
 }
 
-export const loginUser = createAsyncThunk("user/loginUser", loginUserThunk)
+export const login = createAsyncThunk("auth/login", loginThunk)
 
-const userSlice = createSlice({
-    name: "user",
+const authSlice = createSlice({
+    name: "auth",
     initialState,
     reducers: {},
     extraReducers: (builder) => {
         builder
-            .addCase(loginUser.pending, (state) => {
+            .addCase(login.pending, (state) => {
                 state.isLoading = true
             })
-            .addCase(loginUser.fulfilled, (state, action) => {
+            .addCase(login.fulfilled, (state, action) => {
                 const { user } = action.payload
                 state.isLoading = false
                 state.user = user
                 toast.success(`Welcome back ${user.username}`)
             })
-            .addCase(loginUser.rejected, (state, action) => {
+            .addCase(login.rejected, (state, action) => {
                 state.isLoading = false
                 state.error = action.payload
             })
     }
 })
 
-export default userSlice.reducer
+export default authSlice.reducer

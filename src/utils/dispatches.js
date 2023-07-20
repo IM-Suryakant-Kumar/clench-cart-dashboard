@@ -1,5 +1,5 @@
 import store from "../features/store"
-import { loginUser as login } from "../features/user/userSlice"
+import { login } from "../features/auth/authSlice"
 
 export const loginUser = async ({ username, password }) => {
     await store.dispatch(login({ username, password }))  
@@ -15,3 +15,7 @@ export const loginUser = async ({ username, password }) => {
 
     return null
 }
+
+// export const getUsers = async () => {
+//     const 
+// }

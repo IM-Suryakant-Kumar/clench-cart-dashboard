@@ -4,10 +4,9 @@ import {
 	createRoutesFromElements,
 	Route,
 } from "react-router-dom";
-import Layout from "./components/Layout";
-import Home from "./pages/Home";
-
 import "./App.css";
+import Layout from "./components/Layout";
+import Home, { loader as homeLoader } from "./pages/Home";
 import Users from "./pages/Users";
 import User from "./pages/User";
 import NewUser from "./pages/NewUser";
@@ -25,6 +24,7 @@ const router = createBrowserRouter(
 			<Route
 				index
 				element={<Home />}
+                loader={homeLoader}
 			/>
 			<Route path="users">
 				<Route
